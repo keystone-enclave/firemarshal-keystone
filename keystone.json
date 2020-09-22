@@ -1,0 +1,22 @@
+{
+	"workdir" : ".",
+  "name" : "keystone",
+  "base" : "br-base.json",
+	"linux" : {
+  	"source" : "keystone/linux",
+		"config" : "linux-config",
+		"modules" : {
+			"keystone" : "keystone/linux-keystone-driver"
+		}
+	},
+  "use-bbl" : true,
+	"pk-src" : "keystone/riscv-pk",
+  "host-init" : "host-init.sh",
+	"qemu": "keystone/qemu/riscv64-softmmu/qemu-system-riscv64",
+	"qemu-args": "-bios /home/centos/keystone/keystone/build/bootrom.build/bootrom.bin",
+  "cpus" : 4,
+	"mem": "4GiB",
+  "files" : [
+		["keystone/build/examples/tests/tests.ke", "/root/tests.ke"]
+  ]
+}
