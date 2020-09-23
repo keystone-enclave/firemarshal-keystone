@@ -13,7 +13,7 @@ fi
 
 # set qemu -bios argument to bootrom.bin we will build
 PWD=$(pwd)
-sed -e 's#\-bios [a-zA-Z/.$()]*#\-bios '$PWD'/keystone/build/bootrom.build/bootrom.bin#g' -i keystone.json
+sed -e 's#\-bios .*bootrom.bin#\-bios '$PWD'/keystone/build/bootrom.build/bootrom.bin#g' -i keystone.json
 
 cd keystone
 git checkout dev-firemarshal
