@@ -1,25 +1,25 @@
 {
-	"workdir" : ".",
+  "workdir" : ".",
   "name" : "keystone",
   "base" : "br-base.json",
-	"linux" : {
-  	"source" : "keystone/linux",
-		"config" : "linux-config",
-		"modules" : {
-			"keystone" : "keystone/linux-keystone-driver"
-		}
-	},
-	"firmware" : {
-		"use-bbl" : true,
-		"bbl-src" : "keystone/riscv-pk",
-		"bbl-build-args" : "--enable-sm --enable-opt=2"
-	},
-	"host-init" : "host-init.sh",
-	"qemu": "keystone/qemu/riscv64-softmmu/qemu-system-riscv64",
-				"qemu-args": "-bios /home/centos/firemarshal-keystone/keystone/build/bootrom.build/bootrom.bin",
-	"cpus" : 4,
-	"mem": "4GiB",
+  "linux" : {
+    "source" : "keystone/linux",
+    "config" : "linux-config",
+    "modules" : {
+      "keystone" : "keystone/linux-keystone-driver"
+    }
+  },
+  "firmware" : {
+    "use-bbl" : true,
+    "bbl-src" : "keystone/riscv-pk",
+    "bbl-build-args" : "--enable-sm --enable-opt=2"
+  },
+  "host-init" : "host-init.sh",
+  "qemu": "keystone/qemu/riscv64-softmmu/qemu-system-riscv64",
+        "qemu-args": "-bios /home/centos/firemarshal-keystone/keystone/build/bootrom.build/bootrom.bin",
+  "cpus" : 4,
+  "mem": "4GiB",
   "files" : [
-		["keystone/build/examples/tests/tests.ke", "/root/tests.ke"]
+    ["keystone/build/examples/tests/tests.ke", "/root/tests.ke"]
   ]
 }
