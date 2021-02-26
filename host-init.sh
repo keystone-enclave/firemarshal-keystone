@@ -16,7 +16,7 @@ PWD=$(pwd)
 sed -e 's#\-bios .*bootrom.bin#\-bios '$PWD'/keystone/build/bootrom.build/bootrom.bin#g' -i keystone.json
 
 cd keystone
-git checkout dev-firemarshal
+git checkout dev
 ./fast-setup.sh
 source ./source.sh
 mkdir -p build
