@@ -10,9 +10,9 @@
     }
   },
   "firmware" : {
-    "use-bbl" : true,
-    "bbl-src" : "keystone/riscv-pk",
-    "bbl-build-args" : "--enable-sm --enable-opt=2"
+    "use-opensbi" : true,
+    "opensbi-src" : "keystone/sm",
+    "opensbi-build-args" : "O=../build PLATFORM_DIR=../plat FW_PAYLOAD=y -C opensbi"
   },
   "host-init" : "host-init.sh",
   "qemu": "keystone/qemu/riscv64-softmmu/qemu-system-riscv64",
